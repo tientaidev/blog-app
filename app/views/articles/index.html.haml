@@ -11,4 +11,5 @@
           %h2.card-header= article.title
           .card-body
             %p.card-text= article.body
-            %p= link_to "View details", article, class: 'btn btn-secondary'
+          .card-footer
+            = link_to "View details", article, class: 'card-link'
