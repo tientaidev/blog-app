@@ -1,0 +1,27 @@
+<%= render 'shared/navbar' %>
+
+<div class="container-sm pt-5 pb-5">
+
+  <div class="mb-5 row justify-content-space-between">
+    <h1 class="col">Articles</h1>
+    <div class="col-1 align-self-center">
+      <%= link_to "Create", new_article_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+
+  <div class="row row-cols-4">
+    <% @articles.each do |article| %>
+      <div class="col mb-5">
+        <div class="card h-100">
+          <h2 class="card-header"><%= article.title %></h2>
+          <div class="card-body">
+            <p class="card-text"><%= article.body %></p>
+            <p><%= link_to "View details", article, class: 'btn btn-secondary' %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
