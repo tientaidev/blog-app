@@ -1,0 +1,4 @@
+- article.errors.full_messages.each do |message|
+  .alert.alert-danger.alert-dismissible{:role => 'alert'}
+    = message
+    %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "alert", :type => "button"}

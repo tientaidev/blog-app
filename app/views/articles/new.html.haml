@@ -1,11 +1,8 @@
 = render 'shared/navbar'
 
 .container-sm.py-5.px-5
-  - @article.errors.full_messages.each do |message|
-    .alert.alert-danger.alert-dismissible{:role => 'alert'}
-      = message
-      %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "alert", :type => "button"}
 
+  = render 'error', article: @article
 
   .mb-5.row.row-cols-2.justify-content-space-between
     %h1.col New articles

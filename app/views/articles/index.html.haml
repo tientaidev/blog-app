@@ -4,12 +4,6 @@
     %h1.col Articles
     .col.align-self-center.d-flex.justify-content-end
       = link_to "Create", new_article_path, class: 'btn btn-primary'
+
   .row.row-cols-1.row-cols-sm-2.row-cols-md-4
-    - @articles.each do |article|
-      .col.mb-5
-        .card.h-100
-          %h2.card-header= article.title
-          .card-body
-            %p.card-text= article.body
-          .card-footer
-            = link_to "View details", article, class: 'card-link'
+    = render @articles

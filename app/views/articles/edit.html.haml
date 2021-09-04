@@ -1,10 +1,12 @@
 = render 'shared/navbar'
 .container-sm.py-5.px-5
-  / <div class="alert alert-danger alert-dismissible" role="alert">
-  / <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  / </div>
+
+  - if @article.errors
+    = render 'error', article: @article
+
   .mb-5.row.row-cols-2.justify-content-space-between
     %h1.col Edit article
     .col.align-self-center.d-flex.justify-content-end
       = link_to "Back", articles_path, class: 'btn btn-primary'
+
   = render 'form', article: @article

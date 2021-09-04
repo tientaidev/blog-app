@@ -9,3 +9,9 @@
     .card-footer
       = link_to "Edit", edit_article_path, class: 'card-link'
       = link_to "Delete", article_path(@article), method: :delete, class: 'card-link'
+
+  .pt-5
+    = render 'comment_form', article: @article
+
+  .pt-5
+    = render @comments
