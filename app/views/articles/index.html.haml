@@ -1,0 +1,14 @@
+= render 'shared/navbar'
+.container-sm.pt-5.pb-5
+  .mb-5.row.row-cols-2.justify-content-space-between
+    %h1.col Articles
+    .col.align-self-center.d-flex.justify-content-end
+      = link_to "Create", new_article_path, class: 'btn btn-primary'
+  .row.row-cols-1.row-cols-sm-2.row-cols-md-4
+    - @articles.each do |article|
+      .col.mb-5
+        .card.h-100
+          %h2.card-header= article.title
+          .card-body
+            %p.card-text= article.body
+            %p= link_to "View details", article, class: 'btn btn-secondary'

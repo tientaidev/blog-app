@@ -1,0 +1,11 @@
+= render 'shared/navbar'
+.container-sm.mt-5
+  = link_to "Back", articles_path, class: 'btn btn-primary mb-5'
+  .card
+    .card-header
+      %h1= @article.title
+    .card-body
+      .card-text= @article.body
+    .card-footer
+      = link_to "Edit", edit_article_path, class: 'card-link'
+      = link_to "Delete", article_path(@article), method: :delete, class: 'card-link'
