@@ -6,7 +6,7 @@
       %p.card-text= article.body
     .card-footer
       Posted by
-      - if user_signed_in?
+      - if user_signed_in? && article.user
         %strong= article.user.name
       - else
         %strong Sign in to see
