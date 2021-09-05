@@ -1,4 +1,5 @@
-.mb-3
-  %strong= comment.commenter
-  = comment.body
+- if comment.user
+  .mb-3
+    %strong= comment.user.name
+    = comment.body
 

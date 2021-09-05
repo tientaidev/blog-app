@@ -12,4 +12,14 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if flash[:notice]
+      .alert.alert-primary.alert-dismissible.mb-0{:role => 'alert'}
+        = notice
+        %button.btn-close{'aria-label' => 'Close', 'data-bs-dismiss' => 'alert', :type => 'button'}
+
+    - if flash[:alert]
+      .alert.alert-danger.alert-dismissible.mb-0{:role => 'alert'}
+        = alert
+        %button.btn-close{'arial-label' => 'Close', 'data-bs-dismiss' => 'alert', :type => 'button'}
+
     = yield

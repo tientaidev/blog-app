@@ -1,7 +1,12 @@
 .col.mb-5
   .card.h-100
-    %h2.card-header= article.title
+    %h2.card-header
+      = link_to article.title, article
     .card-body
       %p.card-text= article.body
     .card-footer
-      = link_to "View details", article, class: 'card-link'
+      Posted by
+      - if user_signed_in?
+        %strong= article.user.name
+      - else
+        %strong Sign in to see

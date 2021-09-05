@@ -6,12 +6,20 @@
       %h1= @article.title
     .card-body
       .card-text= @article.body
-    .card-footer
-      = link_to "Edit", edit_article_path, class: 'card-link'
-      = link_to "Delete", article_path(@article), method: :delete, class: 'card-link'
+    - if current_user == @article.user
+      .card-footer
+        = link_to "Edit", edit_article_path, class: 'card-link'
+        = link_to "Delete", article_path(@article), method: :delete, class: 'card-link'
+
+  - if current_user
+    .pt-5
+      = render 'comment_form', article: @article
+
 
   .pt-5
-    = render 'comment_form', article: @article
+    - if user_signed_in?
+      = render @comments
+    - else
+      Sign in too see the comments
 
-  .pt-5
-    = render @comments
+
